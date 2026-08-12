@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ìtumọ̀, technical evidence for AI infrastructure</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="description" content="Reference architectures, benchmark analysis and evaluation guides for AI infrastructure companies. Fixed scope. Written by people who understand the system.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E9EBE6;
+  --paper-2:#F2F3EF;
+  --ink:#16191A;
+  --graphite:#5A6260;
+  --rule:#C6CBC3;
+  --signal:#E24E1B;
+  --deep:#0F3A38;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:16px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+
+/* ---------- top bar ---------- */
+.bar{
+  border-bottom:1px solid var(--rule);
+  position:sticky;top:0;z-index:20;
+  background:rgba(233,235,230,.94);
+  backdrop-filter:saturate(140%) blur(6px);
+}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:20px}
+.brandmark{display:flex;align-items:baseline;gap:11px;text-decoration:none;color:var(--ink)}
+.brandmark .n{font-family:Archivo,Helvetica,Arial,sans-serif;font-weight:700;font-size:19px;letter-spacing:-.02em}
+.brandmark .sub{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--graphite)}
+.bar a.contact{
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink);text-decoration:none;border-bottom:1px solid var(--signal);padding-bottom:2px;
+}
+.bar a.contact:hover{color:var(--signal)}
+
+/* ---------- hero ---------- */
+.hero{padding:88px 0 0}
+.eyebrow{
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--signal);
+  display:flex;align-items:center;gap:10px;margin-bottom:26px;
+}
+.eyebrow:before{content:"";width:26px;height:1px;background:var(--signal);display:block}
+h1{
+  font-family:Archivo,Helvetica,Arial,sans-serif;
+  font-weight:600;font-size:clamp(30px,4.6vw,50px);line-height:1.08;
+  letter-spacing:-.03em;max-width:24ch;
+}
+h1 em{font-style:normal;color:var(--graphite)}
+.lede{
+  margin-top:26px;max-width:60ch;font-size:17.5px;color:#2C3231;
+}
+.lede b{font-weight:500;color:var(--ink)}
+.gloss{
+  margin-top:22px;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--graphite);border-left:2px solid var(--signal);padding-left:14px;
+}
+
+/* ---------- signature diagram ---------- */
+.figure{margin:62px 0 0;border-top:1px solid var(--rule);padding-top:16px}
+.figcap{
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--graphite);margin-bottom:18px;
+}
+svg.section-drawing{width:100%;height:auto;display:block;overflow:visible}
+.dim-line{stroke:var(--signal);stroke-width:1.4}
+.draw{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 1.1s .35s cubic-bezier(.6,0,.2,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.fade{opacity:0;animation:fade .7s 1.15s ease forwards}
+@keyframes fade{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){
+  .draw{animation:none;stroke-dashoffset:0}
+  .fade{animation:none;opacity:1}
+}
+
+/* ---------- generic section ---------- */
+section{padding:88px 0}
+.marker{display:flex;align-items:center;gap:12px;margin-bottom:30px}
+.marker span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--graphite)}
+.marker svg{flex:none}
+h2{
+  font-family:Archivo,Helvetica,Arial,sans-serif;font-weight:600;
+  font-size:clamp(23px,3.1vw,31px);letter-spacing:-.024em;line-height:1.16;max-width:22ch;
+}
+.body-col{max-width:64ch;margin-top:22px;color:#2C3231}
+.body-col p+p{margin-top:16px}
+
+.divider{height:1px;background:var(--rule)}
+
+/* ---------- spec sheets ---------- */
+.units{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:40px}
+@media(min-width:860px){.units{grid-template-columns:repeat(3,1fr)}}
+.unit{background:var(--paper-2);padding:28px 26px 30px;display:flex;flex-direction:column}
+.unit .tag{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--signal);margin-bottom:16px}
+.unit h3{font-family:Archivo,Helvetica,Arial,sans-serif;font-weight:600;font-size:20px;letter-spacing:-.02em;line-height:1.2}
+.unit .desc{margin-top:14px;font-size:14.6px;color:#3A413F;flex:1}
+.spec{margin-top:22px;border-top:1px solid var(--rule);padding-top:14px}
+.spec dl{display:grid;grid-template-columns:auto 1fr;gap:7px 16px;font-size:12.5px}
+.spec dt{color:var(--graphite);letter-spacing:.08em;text-transform:uppercase;font-size:10.5px;padding-top:2px}
+.spec dd{text-align:right}
+.spec dd.price{color:var(--deep);font-weight:500}
+
+/* ---------- boundary ---------- */
+.boundary{background:var(--deep);color:#DCE5E2;margin-top:0}
+.boundary h2{color:#fff}
+.boundary .marker span{color:#8FA8A3}
+.notlist{margin-top:30px;display:grid;gap:0;max-width:74ch}
+.notlist li{
+  list-style:none;padding:15px 0;border-top:1px solid rgba(255,255,255,.16);
+  display:flex;gap:16px;align-items:baseline;font-size:15.4px;
+}
+.notlist li:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+.notlist .x{color:var(--signal);font-size:12px;flex:none;letter-spacing:.1em}
+
+/* ---------- process ---------- */
+.steps{margin-top:38px;border-top:1px solid var(--rule)}
+.step{display:grid;gap:6px 26px;padding:22px 0;border-bottom:1px solid var(--rule)}
+@media(min-width:760px){.step{grid-template-columns:64px 1fr 190px;align-items:baseline}}
+.step .no{font-size:12px;color:var(--signal);letter-spacing:.1em}
+.step .t{font-weight:500;font-size:16.5px}
+.step .d{font-size:14.4px;color:#3A413F}
+.step .when{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--graphite)}
+@media(min-width:760px){.step .when{text-align:right}}
+
+/* ---------- credential ---------- */
+.cred{display:grid;gap:30px}
+@media(min-width:820px){.cred{grid-template-columns:1.15fr 1fr;gap:56px}}
+.cred ul{list-style:none;margin-top:6px}
+.cred li{padding:11px 0;border-bottom:1px solid var(--rule);font-size:14.6px;display:flex;gap:13px}
+.cred li:first-child{border-top:1px solid var(--rule)}
+.cred li b{font-weight:500}
+.tick{color:var(--signal);flex:none}
+
+/* ---------- close ---------- */
+.close{padding:92px 0 78px}
+.close h2{max-width:26ch}
+.cta{
+  display:inline-flex;align-items:center;gap:12px;margin-top:30px;
+  background:var(--ink);color:var(--paper);text-decoration:none;
+  padding:16px 26px;font-size:14px;letter-spacing:.04em;
+}
+.cta:hover{background:var(--signal)}
+.cta .arrow{font-family:"IBM Plex Mono",monospace}
+.alt{margin-top:18px;font-size:14px;color:var(--graphite)}
+.alt a{color:var(--ink)}
+
+footer{border-top:1px solid var(--rule);padding:26px 0 40px}
+footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--graphite)}
+footer a{color:var(--graphite)}
+a:focus-visible,.cta:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="wrap">
+    <a class="brandmark" href="#top">
+      <span class="n">Ìtumọ̀</span>
+      <span class="sub">An Altitude practice</span>
+    </a>
+    <a class="contact" href="#contact">Start a brief</a>
+  </div>
+</div>
+
+<div id="top"></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Technical evidence for AI infrastructure</div>
+    <h1>Docs serve customers. Brand serves strangers. <em>Neither serves the platform lead who is deciding.</em></h1>
+    <p class="lede">
+      Ìtumọ̀ makes the middle layer: <b>reference architectures, benchmark analysis and evaluation
+      guides</b> that a technical buyer actually uses to choose you, and to defend the choice
+      internally. Fixed scope, ten working days, written by people who understand the system rather
+      than people who researched it.
+    </p>
+
+    <p class="gloss mono">Ìtumọ̀ &nbsp;/&nbsp; ee-TOO-maw &nbsp;/&nbsp; Yoruba: meaning, interpretation, translation</p>
+
+    <div class="figure">
+      <div class="figcap">
+        <span>Fig. 1 &nbsp;·&nbsp; Content estate, section view</span>
+        <span>Measured from the buyer's position</span>
+      </div>
+
+      <svg class="section-drawing" viewBox="0 0 1000 250" role="img"
+           aria-label="Diagram: product documentation on the left, brand and campaign on the right, with an unowned evaluation layer between them.">
+        <!-- ground line -->
+        <line x1="0" y1="196" x2="1000" y2="196" stroke="#C6CBC3" stroke-width="1"/>
+
+        <!-- left estate -->
+        <rect x="0" y="96" width="318" height="100" fill="#0F3A38" opacity="0.09"/>
+        <rect x="0" y="96" width="318" height="100" fill="none" stroke="#0F3A38" stroke-width="1.2"/>
+        <text x="18" y="126" class="mono" font-size="12" letter-spacing="1.6" fill="#0F3A38">PRODUCT DOCS</text>
+        <text x="18" y="148" font-size="13" fill="#5A6260">Serves customers who</text>
+        <text x="18" y="166" font-size="13" fill="#5A6260">already bought</text>
+        <text x="18" y="186" class="mono" font-size="10.5" letter-spacing="1.4" fill="#0F3A38">OWNED BY ENGINEERING</text>
+
+        <!-- right estate -->
+        <rect x="682" y="96" width="318" height="100" fill="#0F3A38" opacity="0.09"/>
+        <rect x="682" y="96" width="318" height="100" fill="none" stroke="#0F3A38" stroke-width="1.2"/>
+        <text x="700" y="126" class="mono" font-size="12" letter-spacing="1.6" fill="#0F3A38">BRAND &amp; CAMPAIGN</text>
+        <text x="700" y="148" font-size="13" fill="#5A6260">Serves people who have</text>
+        <text x="700" y="166" font-size="13" fill="#5A6260">not heard of you</text>
+        <text x="700" y="186" class="mono" font-size="10.5" letter-spacing="1.4" fill="#0F3A38">OWNED BY CREATIVE</text>
+
+        <!-- the void -->
+        <rect x="318" y="96" width="364" height="100" fill="none" stroke="#C6CBC3" stroke-width="1" stroke-dasharray="3 5"/>
+
+        <!-- dimension line -->
+        <g class="draw" style="--len:364">
+          <line class="dim-line" x1="318" y1="66" x2="682" y2="66"/>
+        </g>
+        <g class="fade">
+          <line class="dim-line" x1="318" y1="54" x2="318" y2="78"/>
+          <line class="dim-line" x1="682" y1="54" x2="682" y2="78"/>
+          <line x1="318" y1="66" x2="336" y2="60" class="dim-line"/>
+          <line x1="318" y1="66" x2="336" y2="72" class="dim-line"/>
+          <line x1="682" y1="66" x2="664" y2="60" class="dim-line"/>
+          <line x1="682" y1="66" x2="664" y2="72" class="dim-line"/>
+          <text x="500" y="38" text-anchor="middle" class="mono" font-size="12.5" letter-spacing="2.2" fill="#E24E1B">THE EVALUATION LAYER</text>
+          <text x="500" y="134" text-anchor="middle" font-size="14.5" fill="#16191A">Serves the platform lead mid-decision</text>
+          <text x="500" y="158" text-anchor="middle" font-size="14.5" fill="#16191A">who has to justify you internally</text>
+          <text x="500" y="186" text-anchor="middle" class="mono" font-size="10.5" letter-spacing="1.4" fill="#E24E1B">UNOWNED</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="marker">
+      <svg width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><path d="M8 0 L15 11 H1 Z" fill="none" stroke="#E24E1B" stroke-width="1.3"/><line x1="0" y1="13.3" x2="16" y2="13.3" stroke="#E24E1B" stroke-width="1.3"/></svg>
+      <span>The gap</span>
+    </div>
+    <h2>Nobody owns it, because it sits between two teams and belongs to neither</h2>
+    <div class="body-col">
+      <p>
+        Creative teams cannot originate this work. Not for want of skill. Writing an evaluation guide
+        means knowing what model FLOPs utilization is, why goodput matters more than peak FLOPS, what an
+        hour of ETTR is worth across a 1,024 GPU run, and what actually happens when a node fails
+        four days into training.
+      </p>
+      <p>
+        Engineering can explain all of it and will not prioritize writing it, because it is not the
+        product. So the layer stays empty while the buyer is left to assemble the case from
+        documentation, a press release and a benchmark PDF on a CDN.
+      </p>
+      <p>
+        Meanwhile the decision is being made. Usually by someone who has to walk into a room and
+        justify a commitment in the tens of millions of dollars.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="marker">
+      <svg width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><path d="M8 0 L15 11 H1 Z" fill="none" stroke="#E24E1B" stroke-width="1.3"/><line x1="0" y1="13.3" x2="16" y2="13.3" stroke="#E24E1B" stroke-width="1.3"/></svg>
+      <span>What we make</span>
+    </div>
+    <h2>Three units. Fixed scope, fixed price, fixed date.</h2>
+
+    <div class="units">
+      <article class="unit">
+        <div class="tag">Unit 01</div>
+        <h3>Technical Evidence Brief</h3>
+        <p class="desc">
+          One reference architecture or evaluation guide for one workload. The artifact a buyer is
+          handed mid-decision: system diagram, tradeoffs stated honestly, and a method they can run
+          themselves.
+        </p>
+        <div class="spec">
+          <dl>
+            <dt>Output</dt><dd>1 asset, 8 to 12 pages</dd>
+            <dt>Duration</dt><dd>10 working days</dd>
+            <dt>Revisions</dt><dd>Two rounds</dd>
+            <dt>From</dt><dd class="price">$8,000</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="unit">
+        <div class="tag">Unit 02</div>
+        <h3>Launch Evidence Pack</h3>
+        <p class="desc">
+          Everything a launch needs between the press release and the docs. Architecture explainer,
+          solution brief for the technical buyer, a benchmark-it-yourself guide, and the technical FAQ
+          your field team is about to ask for.
+        </p>
+        <div class="spec">
+          <dl>
+            <dt>Output</dt><dd>4 assets</dd>
+            <dt>Duration</dt><dd>3 weeks</dd>
+            <dt>Revisions</dt><dd>Two rounds</dd>
+            <dt>From</dt><dd class="price">$22,000</dd>
+          </dl>
+        </div>
+      </article>
+
+      <article class="unit">
+        <div class="tag">Unit 03</div>
+        <h3>Evaluation Layer Program</h3>
+        <p class="desc">
+          A standing library rather than a series of projects. Reference architectures per workload,
+          a benchmarks hub, competitive evidence kept current as results land. Agreed output per
+          quarter.
+        </p>
+        <div class="spec">
+          <dl>
+            <dt>Output</dt><dd>Agreed quarterly</dd>
+            <dt>Duration</dt><dd>Rolling, 3 month min</dd>
+            <dt>Revisions</dt><dd>Continuous</dd>
+            <dt>From</dt><dd class="price">$18,000 / mo</dd>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="boundary">
+  <div class="wrap">
+    <div class="marker">
+      <svg width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><path d="M8 0 L15 11 H1 Z" fill="none" stroke="#E24E1B" stroke-width="1.3"/><line x1="0" y1="13.3" x2="16" y2="13.3" stroke="#E24E1B" stroke-width="1.3"/></svg>
+      <span>Scope</span>
+    </div>
+    <h2>What we deliberately do not do</h2>
+    <ul class="notlist">
+      <li><span class="x mono">OUT</span><span>Brand strategy, identity, naming or visual systems. That belongs to your brand partner and we work inside what they have built.</span></li>
+      <li><span class="x mono">OUT</span><span>Websites, campaigns and advertising.</span></li>
+      <li><span class="x mono">OUT</span><span>High-volume blog and SEO programs. Different job, different vendor, roughly a tenth of the price.</span></li>
+      <li><span class="x mono">OUT</span><span>Product documentation. Your engineers should own it and yours is already good.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="marker">
+      <svg width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><path d="M8 0 L15 11 H1 Z" fill="none" stroke="#E24E1B" stroke-width="1.3"/><line x1="0" y1="13.3" x2="16" y2="13.3" stroke="#E24E1B" stroke-width="1.3"/></svg>
+      <span>How an engagement runs</span>
+    </div>
+    <h2>Ten days, four fixed points</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="no mono">01</div>
+        <div><div class="t">Technical intake</div><div class="d">Ninety minutes with whoever owns the system. No brief document required, we write it.</div></div>
+        <div class="when">Day 1</div>
+      </div>
+      <div class="step">
+        <div class="no mono">02</div>
+        <div><div class="t">Argument and structure signed off</div><div class="d">The claim, the evidence behind it and the shape of the asset, agreed before anything is made.</div></div>
+        <div class="when">Day 3</div>
+      </div>
+      <div class="step">
+        <div class="no mono">03</div>
+        <div><div class="t">First full draft</div><div class="d">Complete, including diagrams. Not an outline and not a concept.</div></div>
+        <div class="when">Day 7</div>
+      </div>
+      <div class="step">
+        <div class="no mono">04</div>
+        <div><div class="t">Technical review and delivery</div><div class="d">Your engineer checks accuracy, we take two revision rounds, you get working files.</div></div>
+        <div class="when">Day 10</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section>
+  <div class="wrap">
+    <div class="marker">
+      <svg width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><path d="M8 0 L15 11 H1 Z" fill="none" stroke="#E24E1B" stroke-width="1.3"/><line x1="0" y1="13.3" x2="16" y2="13.3" stroke="#E24E1B" stroke-width="1.3"/></svg>
+      <span>Who makes it</span>
+    </div>
+    <div class="cred">
+      <div>
+        <h2>Written by an operator who has shipped enterprise AI, not a writer who researched it</h2>
+        <div class="body-col" style="margin-top:18px">
+          <p>
+            Ìtumọ̀ is led by Bolaji Olatoye, Global Head of AI Solutions at an enterprise AI firm,
+            delivering AI systems into private equity, life sciences and international law. Before
+            that, twenty years inside global financial institutions, including Vice President at
+            JP Morgan.
+          </p>
+          <p>
+            That combination is the point. Technical material for infrastructure fails in one of two
+            directions. Either it is accurate and lands on nobody, or it reads well and an engineer
+            finds the error on page two. Holding both at once is the whole job.
+          </p>
+        </div>
+      </div>
+      <div>
+        <ul>
+          <li><span class="tick mono">·</span><span><b>Global Head of AI Solutions</b>, enterprise AI firm</span></li>
+          <li><span class="tick mono">·</span><span>AI systems delivered into <b>private equity, life sciences and international law</b></span></li>
+          <li><span class="tick mono">·</span><span>[HANDS-ON TECHNICAL LINE TO SUPPLY]</span></li>
+          <li><span class="tick mono">·</span><span>AI adoption program delivered to <b>100+ businesses</b></span></li>
+          <li><span class="tick mono">·</span><span><b>Vice President</b>, JP Morgan. Barclays, BNP Paribas, BlackRock, Merrill Lynch</span></li>
+          <li><span class="tick mono">·</span><span>Keynote: <b>House of Lords</b>, Singapore Tech Week. UK government advisory, DBT</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="close" id="contact">
+  <div class="wrap">
+    <h2>Tell us the workload. We will build the brief on spec.</h2>
+    <div class="body-col">
+      <p>
+        If you are not sure the layer is missing, name one workload your buyers evaluate you on and we
+        will produce the reference architecture for it using public material only. If it is useful,
+        it shows you what the unit looks like. If not, nothing is lost.
+      </p>
+    </div>
+    <a class="cta" href="mailto:bolaji@altitudeai.co?subject=Itumo%20brief"><span>Start a brief</span><span class="arrow">&rarr;</span></a>
+    <p class="alt">Or write directly to <a href="mailto:bolaji@altitudeai.co">bolaji@altitudeai.co</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">ÌTUMỌ̀ &nbsp;·&nbsp; AN ALTITUDE PRACTICE</span>
+    <span>bolaji@altitudeai.co &nbsp;·&nbsp; London, UK</span>
+  </div>
+</footer>
+
+</body>
+</html>
