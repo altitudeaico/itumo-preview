@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Ìtumọ̀ asset preview (internal)</title>
+<style>
+:root{--bg:#15171A;--panel:#1D2024;--line:#2E3238;--txt:#E6E8E6;--mut:#8C9490;--sig:#E24E1B}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:ui-sans-serif,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.55}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+header{border-bottom:1px solid var(--line);padding:26px 0;position:sticky;top:0;background:rgba(21,23,26,.96);backdrop-filter:blur(8px);z-index:10}
+header .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+h1{font-size:19px;font-weight:600;letter-spacing:-.01em}
+header .sub{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+nav{display:flex;gap:16px;flex-wrap:wrap;font-size:12px}
+nav a{color:var(--mut);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+nav a:hover{color:var(--txt);border-color:var(--sig)}
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+h2{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--sig);margin-bottom:6px}
+.note{font-size:13px;color:var(--mut);margin-bottom:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:18px}
+.card .bar{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:11px 15px;border-bottom:1px solid var(--line);font-size:12px;color:var(--mut);flex-wrap:wrap}
+.card .bar b{color:var(--txt);font-weight:500}
+.card .bar a{color:var(--sig);text-decoration:none;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+video,.card>img{width:100%;display:block;background:#000}
+.grid{display:grid;gap:14px}
+@media(min-width:760px){.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}}
+.grid img{width:100%;display:block;border:1px solid var(--line);border-radius:4px;background:#000}
+.cap{font-size:11.5px;color:var(--mut);padding:8px 2px 0}
+iframe{width:100%;height:820px;border:0;background:#fff}
+.pill{display:inline-block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  border:1px solid var(--line);color:var(--mut);padding:3px 9px;border-radius:20px;margin-left:8px}
+.live{border-color:var(--sig);color:var(--sig)}
+footer{padding:34px 0 60px;font-size:12px;color:var(--mut)}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <div>
+    <h1>Ìtumọ̀ asset preview <span class="pill">internal</span></h1>
+    <div class="sub">Everything built so far, in one place</div>
+  </div>
+  <nav>
+    <a href="#films">Films</a><a href="#carousel">Carousel</a><a href="#guide">Guide</a>
+    <a href="#stills">Stills</a><a href="#brand">Brand</a><a href="#site">Live site</a>
+  </nav>
+</div></header>
+
+<section id="films"><div class="wrap">
+  <h2>Films</h2>
+  <p class="note">All silent. Showreel is what currently sits in the site hero.</p>
+
+  <div class="card">
+    <div class="bar"><span><b>Showreel</b> · 0:27 · in use on site</span><a href="itumo-showreel.mp4" download>Download</a></div>
+    <video controls preload="metadata" poster="reel-poster.png" playsinline><source src="itumo-showreel.mp4" type="video/mp4"></video>
+  </div>
+
+  <div class="card">
+    <div class="bar"><span><b>Explainer sample</b> · 0:42 · white and amber system</span><a href="itumo-explainer.mp4" download>Download</a></div>
+    <video controls preload="metadata" poster="poster.png" playsinline><source src="itumo-explainer.mp4" type="video/mp4"></video>
+  </div>
+
+  <div class="card">
+    <div class="bar"><span><b>Pitch film</b> · 1:00 · built then removed from the site</span><a href="itumo-pitch.mp4" download>Download</a></div>
+    <video controls preload="metadata" poster="pitch-poster.png" playsinline><source src="itumo-pitch.mp4" type="video/mp4"></video>
+  </div>
+</div></section>
+
+<section id="carousel"><div class="wrap">
+  <h2>Infographic carousel</h2>
+  <p class="note">Nine slides, 1200 square. Dark and blue system, Poppins. No Ìtumọ̀ branding on the slides.</p>
+  <div class="grid three">
+    <div><img src="carousel/slide-1.png" alt=""><div class="cap">01 cover</div></div>
+    <div><img src="carousel/slide-2.png" alt=""><div class="cap">02 the job</div></div>
+    <div><img src="carousel/slide-3.png" alt=""><div class="cap">03 one node</div></div>
+    <div><img src="carousel/slide-4.png" alt=""><div class="cap">04 the cluster</div></div>
+    <div><img src="carousel/slide-5.png" alt=""><div class="cap">05 failure</div></div>
+    <div><img src="carousel/slide-6.png" alt=""><div class="cap">06 rollback</div></div>
+    <div><img src="carousel/slide-7.png" alt=""><div class="cap">07 storage</div></div>
+    <div><img src="carousel/slide-8.png" alt=""><div class="cap">08 four numbers</div></div>
+    <div><img src="carousel/slide-9.png" alt=""><div class="cap">09 close</div></div>
+  </div>
+</div></section>
+
+<section id="guide"><div class="wrap">
+  <h2>Evaluation guide</h2>
+  <p class="note">Four pages, A4. Ivory and green editorial system, Lora serif.</p>
+  <div class="card">
+    <div class="bar"><span><b>How to evaluate an AI cloud for large-scale training</b> · 4pp</span><a href="evaluation-guide.pdf" target="_blank">Open PDF</a></div>
+    <iframe src="evaluation-guide.pdf#view=FitH" title="Evaluation guide"></iframe>
+  </div>
+</div></section>
+
+<section id="stills"><div class="wrap">
+  <h2>Stills and thumbnails</h2>
+  <p class="note">Explainer key frames, the infographic poster, and the tile thumbnails used on the site.</p>
+  <div class="grid two">
+    <div><img src="frame-1.png" alt=""><div class="cap">Explainer frame 01 (original paper system)</div></div>
+    <div><img src="frame-3.png" alt=""><div class="cap">Explainer frame 03 (original paper system)</div></div>
+    <div><img src="thumb-pack.png" alt=""><div class="cap">Guides tile thumbnail</div></div>
+    <div><img src="thumb-deck.png" alt=""><div class="cap">Presentations tile thumbnail — still a mockup</div></div>
+    <div><img src="thumb-info.png" alt=""><div class="cap">Infographics tile thumbnail</div></div>
+    <div><img src="poster.png" alt=""><div class="cap">Explainer poster frame</div></div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <div class="bar"><span><b>Infographic poster</b> · 1400 × 2210 · paper system</span><a href="infographic.png" target="_blank">Open full size</a></div>
+    <img src="infographic.png" alt="">
+  </div>
+</div></section>
+
+<section id="brand"><div class="wrap">
+  <h2>Brand</h2>
+  <div class="grid two">
+    <div><img src="og.png" alt=""><div class="cap">Open Graph card, 1200 × 630</div></div>
+    <div style="background:#F2F3EF;border:1px solid var(--line);border-radius:4px;padding:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:center">
+      <img src="logos/house-of-lords.png" style="border:0;filter:grayscale(1);opacity:.75">
+      <img src="logos/singapore-tech-week.png" style="border:0;filter:grayscale(1);opacity:.75">
+      <img src="logos/dbt.png" style="border:0;filter:grayscale(1);opacity:.75">
+      <img src="logos/ncac.png" style="border:0;filter:grayscale(1);opacity:.75">
+      <img src="logos/iep.png" style="border:0;filter:grayscale(1);opacity:.75">
+      <img src="logos/omniverse.png" style="border:0;filter:grayscale(1);opacity:.75">
+      <div class="cap" style="grid-column:1/-1;color:#5A6260">Trusted by strip, as it renders on the site</div>
+    </div>
+  </div>
+</div></section>
+
+<section id="site"><div class="wrap">
+  <h2>Live site</h2>
+  <p class="note">The page itself, embedded. Open in a new tab for the real thing.</p>
+  <div class="card">
+    <div class="bar"><span><b>itumo-preview</b></span><a href="./" target="_blank">Open site</a></div>
+    <iframe src="./" style="height:900px" title="Ìtumọ̀ site"></iframe>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  Internal preview. Not linked from the site, noindexed.
+  <br>Outstanding: no audio on any film · Presentations thumbnail is still a mockup · no deck built yet.
+</div></footer>
+
+</body>
+</html>
