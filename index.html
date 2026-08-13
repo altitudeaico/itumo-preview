@@ -81,9 +81,10 @@ h2{font-weight:600;font-size:clamp(22px,2.9vw,29px);line-height:1.18;max-width:3
 .note{margin-top:16px;font-size:12.5px;color:var(--graphite)}
 .logos{padding:52px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--paper-2)}
 .logohead{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--graphite);text-align:center}
-.logorow{margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px 38px}
-.logorow img{height:58px;width:auto;opacity:.72;filter:grayscale(1)}
-@media(max-width:640px){.logorow{gap:14px 24px}.logorow img{height:42px}}
+.logorow{margin-top:24px;display:grid;grid-template-columns:repeat(6,1fr);align-items:center;gap:16px 22px}
+.logorow img{max-height:56px;max-width:100%;width:auto;margin:0 auto;display:block;opacity:.72;filter:grayscale(1)}
+@media(max-width:820px){.logorow{grid-template-columns:repeat(3,1fr);gap:22px}}
+@media(max-width:480px){.logorow{grid-template-columns:repeat(2,1fr)}.logorow img{max-height:44px}}
 
 .carsub{margin-top:14px;font-size:15px;color:var(--graphite);max-width:62ch;text-wrap:pretty}
 .car{margin-top:28px;display:flex;align-items:center;gap:16px;justify-content:center}
