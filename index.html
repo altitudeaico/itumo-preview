@@ -76,6 +76,18 @@ h2{font-weight:600;font-size:clamp(22px,2.9vw,29px);line-height:1.18;max-width:2
 .tile .thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .tile .cap{display:block;margin-top:11px;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--graphite)}
 .note{margin-top:16px;font-size:12.5px;color:var(--graphite)}
+.carsub{margin-top:14px;font-size:15px;color:var(--graphite);max-width:56ch}
+.car{margin-top:28px;display:flex;align-items:center;gap:16px;justify-content:center}
+.car .stage{flex:0 1 560px;border:1px solid var(--rule);background:var(--paper-2)}
+.car .stage img{width:100%;display:block}
+.car .nav{flex:none;width:46px;height:46px;border:1px solid var(--rule);background:var(--paper-2);
+  color:var(--ink);font-size:17px;cursor:pointer;font-family:"IBM Plex Mono",monospace}
+.car .nav:hover{background:var(--signal);color:var(--paper);border-color:var(--signal)}
+.dots{display:flex;gap:7px;justify-content:center;margin-top:18px}
+.dots button{width:9px;height:9px;padding:0;border:1px solid var(--graphite);background:transparent;cursor:pointer}
+.dots button[aria-current="true"]{background:var(--signal);border-color:var(--signal)}
+@media(max-width:640px){.car .nav{width:38px;height:38px}}
+
 .tile{background:var(--paper-2);padding:0}
 .tile .thumb{display:block;aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(45deg,rgba(15,58,56,.035) 0 10px,transparent 10px 20px)}
 .tile .thumb span{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--graphite)}
@@ -203,11 +215,28 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--signal);outline-offse
       <div class="t"><h3>Presentations</h3><p>Built to your brand template, accurate at board level.</p><span class="cap mono">Sample &nbsp;·&nbsp; infrastructure decision</span></div>
     </article>
     <article class="tile">
-      <a class="thumb" href="infographic.png"><img src="thumb-info.png" alt="Schematic of node, rack and cluster topology"></a>
-      <div class="t"><h3>Infographics</h3><p>Architecture posters and system diagrams for a technical audience.</p><span class="cap mono">Sample &nbsp;·&nbsp; cluster anatomy</span></div>
+      <a class="thumb" href="#carousel"><img src="thumb-info.png" alt="Schematic of node, rack and cluster topology"></a>
+      <div class="t"><h3>Infographics</h3><p>Carousels, architecture posters and system diagrams. See the sample below.</p><span class="cap mono">Sample &nbsp;·&nbsp; cluster anatomy</span></div>
     </article>
   </div>
   <p class="note">All work shown is sample work, built on publicly available material.</p>
+</div></section>
+
+
+<section id="carousel"><div class="wrap">
+  <div class="marker">
+    <svg width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><path d="M8 0 L15 11 H1 Z" fill="none" stroke="#E24E1B" stroke-width="1.3"/><line x1="0" y1="13.3" x2="16" y2="13.3" stroke="#E24E1B" stroke-width="1.3"/></svg>
+    <span>Sample &nbsp;·&nbsp; infographic carousel</span>
+  </div>
+  <h2>Anatomy of a large-scale training cluster</h2>
+  <p class="carsub">Nine slides. The format tech companies post on LinkedIn and hand to a sales team.</p>
+
+  <div class="car">
+    <button class="nav prev" aria-label="Previous slide">&larr;</button>
+    <div class="stage"><img id="carimg" src="carousel/slide-1.png" alt="Carousel slide"></div>
+    <button class="nav next" aria-label="Next slide">&rarr;</button>
+  </div>
+  <div class="dots" id="dots"></div>
 </div></section>
 
 <section class="why"><div class="wrap">
@@ -270,6 +299,20 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--signal);outline-offse
   <span class="mono">ÌTUMỌ̀ &nbsp;·&nbsp; AN ALTITUDE PRACTICE</span>
   <span>bolaji@altitudeai.co &nbsp;·&nbsp; London, UK</span>
 </div></footer>
+
+
+<script>
+(function(){
+  var n=9,i=1,img=document.getElementById('carimg'),dots=document.getElementById('dots');
+  function draw(){img.src='carousel/slide-'+i+'.png';
+    [].forEach.call(dots.children,function(b,k){b.setAttribute('aria-current', (k+1)===i);});}
+  for(var k=1;k<=n;k++){(function(k){var b=document.createElement('button');
+    b.setAttribute('aria-label','Slide '+k);b.onclick=function(){i=k;draw();};dots.appendChild(b);})(k);}
+  document.querySelector('.car .prev').onclick=function(){i=i>1?i-1:n;draw();};
+  document.querySelector('.car .next').onclick=function(){i=i<n?i+1:1;draw();};
+  draw();
+})();
+</script>
 
 </body>
 </html>
