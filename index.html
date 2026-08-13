@@ -45,6 +45,7 @@ h1{font-weight:600;font-size:clamp(29px,4.4vw,47px);line-height:1.1;max-width:21
   letter-spacing:.06em;color:var(--deep);background:var(--paper-2);
   border:1px solid var(--rule);border-left:2px solid var(--signal);padding:8px 14px}
 .lede{margin-top:22px;max-width:58ch;font-size:17.5px;color:#2C3231}
+.pain{margin-top:20px;font-size:20px;color:var(--signal);max-width:44ch;line-height:1.4}
 .gloss{margin-top:20px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--graphite);border-left:2px solid var(--signal);padding-left:13px}
 
 /* showreel */
@@ -116,6 +117,12 @@ h2{font-weight:600;font-size:clamp(22px,2.9vw,29px);line-height:1.18;max-width:2
 .tick{color:var(--signal);flex:none}
 
 .close{padding:84px 0 74px}
+.steps3{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:26px}
+@media(min-width:800px){.steps3{grid-template-columns:repeat(3,1fr)}}
+.steps3>div{background:var(--paper-2);padding:24px 22px 26px}
+.steps3 .n{display:block;font-size:12px;letter-spacing:.12em;color:var(--signal);margin-bottom:12px}
+.steps3 b{display:block;font-family:Archivo,Helvetica,Arial,sans-serif;font-size:18px;font-weight:600;letter-spacing:-.015em}
+.steps3 p{margin-top:8px;font-size:14.4px;color:#3A413F}
 .cta{display:inline-flex;align-items:center;gap:12px;margin-top:26px;background:var(--ink);color:var(--paper);text-decoration:none;padding:16px 26px;font-size:14px;letter-spacing:.04em}
 .cta:hover{background:var(--signal)}
 .alt{margin-top:16px;font-size:14px;color:var(--graphite)}
@@ -134,19 +141,12 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--signal);outline-offse
 <div id="top"></div>
 
 <header class="hero"><div class="wrap">
-  <div class="eyebrow">Videos, presentations, infographics and guides</div>
+  <div class="eyebrow">For marketing teams at AI, infrastructure and developer tools companies</div>
   <h1>We design content for tech companies.</h1>
-  <ul class="offer">
-    <li>Videos</li>
-    <li>Presentations</li>
-    <li>Infographics</li>
-    <li>Guides</li>
-  </ul>
+  <p class="pain">Your last explainer took four rounds because the agency did not understand the product.</p>
   <p class="lede">
-    Made by people who understand the technology, so your engineers are not rewriting the third
-    draft.
+    We already understand it. Your engineers stop rewriting drafts and start approving them.
   </p>
-  <p class="gloss mono">Ìtumọ̀ &nbsp;/&nbsp; ee-TOO-maw &nbsp;/&nbsp; Yoruba: meaning, interpretation</p>
 
   <div class="reel">
     <video controls preload="metadata" poster="poster.png" playsinline>
@@ -164,7 +164,7 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--signal);outline-offse
     <svg width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><path d="M8 0 L15 11 H1 Z" fill="none" stroke="#E24E1B" stroke-width="1.3"/><line x1="0" y1="13.3" x2="16" y2="13.3" stroke="#E24E1B" stroke-width="1.3"/></svg>
     <span>What we make</span>
   </div>
-  <h2>Four things we make</h2>
+  <h2>Four things you can buy</h2>
 
   <div class="svcs">
     <article class="svc">
@@ -200,7 +200,7 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--signal);outline-offse
     <svg width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><path d="M8 0 L15 11 H1 Z" fill="none" stroke="#E24E1B" stroke-width="1.3"/><line x1="0" y1="13.3" x2="16" y2="13.3" stroke="#E24E1B" stroke-width="1.3"/></svg>
     <span>Selected work</span>
   </div>
-  <h2>What you get</h2>
+  <h2>Real examples of each</h2>
   <div class="work">
     <article class="tile">
       <div class="thumb"><img src="poster.png" alt="Explainer frame showing 1,024 nodes with one failed"></div>
@@ -226,10 +226,10 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--signal);outline-offse
 <section id="carousel"><div class="wrap">
   <div class="marker">
     <svg width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><path d="M8 0 L15 11 H1 Z" fill="none" stroke="#E24E1B" stroke-width="1.3"/><line x1="0" y1="13.3" x2="16" y2="13.3" stroke="#E24E1B" stroke-width="1.3"/></svg>
-    <span>Sample &nbsp;·&nbsp; infographic carousel</span>
+    <span>Example &nbsp;·&nbsp; infographic</span>
   </div>
-  <h2>Anatomy of a large-scale training cluster</h2>
-  <p class="carsub">Nine slides. The format tech companies post on LinkedIn and hand to a sales team.</p>
+  <h2>An infographic carousel, nine slides</h2>
+  <p class="carsub">Subject: anatomy of a large-scale training cluster. The format tech companies post on LinkedIn and hand to a sales team. Click through it.</p>
 
   <div class="car">
     <button class="nav prev" aria-label="Previous slide">&larr;</button>
@@ -246,8 +246,8 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--signal);outline-offse
   </div>
   <h2>Why us and not a creative agency</h2>
   <div class="whygrid">
-    <div><b>No translation tax</b><span>We arrive understanding the technology. The brief does not start with a tutorial.</span></div>
-    <div><b>No account layer</b><span>You work directly with the person making the thing. Nobody is relaying your feedback to someone else.</span></div>
+    <div><b>We know your product</b><span>We arrive understanding the technology. The brief does not start with a tutorial.</span></div>
+    <div><b>No middleman</b><span>You work directly with the person making the thing. Nobody is relaying your feedback to someone else.</span></div>
     <div><b>Built for launch dates</b><span>First cut inside ten working days. Revisions in hours, not weeks.</span></div>
     <div><b>Inside your brand</b><span>We work to your existing system. We do not compete with your brand partner and we do not redesign anything.</span></div>
   </div>
@@ -286,17 +286,18 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--signal);outline-offse
 </div></section>
 
 <section class="close" id="contact"><div class="wrap">
-  <h2>Send us one thing you need explained.</h2>
-  <p class="lede" style="margin-top:16px">
-    Name a product, a benchmark or a launch. We will come back with a treatment and a quote,
-    and if it is useful you will have seen exactly how we work before spending anything.
-  </p>
+  <h2>How to start</h2>
+  <div class="steps3">
+    <div><span class="n mono">01</span><b>Send us a link</b><p>A product page, a launch or a benchmark. No brief needed, we write it.</p></div>
+    <div><span class="n mono">02</span><b>We come back in two days</b><p>A treatment and a fixed price. Free, and you commit to nothing.</p></div>
+    <div><span class="n mono">03</span><b>First draft in ten working days</b><p>If the first draft misses, you do not pay for it.</p></div>
+  </div>
   <a class="cta" href="mailto:bolaji@altitudeai.co?subject=Itumo%20enquiry"><span>Get in touch</span><span class="mono">&rarr;</span></a>
   <p class="alt">Or write directly to <a href="mailto:bolaji@altitudeai.co">bolaji@altitudeai.co</a></p>
 </div></section>
 
 <footer><div class="wrap">
-  <span class="mono">ÌTUMỌ̀ &nbsp;·&nbsp; AN ALTITUDE PRACTICE</span>
+  <span class="mono">ÌTUMỌ̀ &nbsp;·&nbsp; EE-TOO-MAW &nbsp;·&nbsp; YORUBA: MEANING &nbsp;·&nbsp; AN ALTITUDE PRACTICE</span>
   <span>bolaji@altitudeai.co &nbsp;·&nbsp; London, UK</span>
 </div></footer>
 
