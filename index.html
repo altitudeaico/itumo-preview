@@ -79,6 +79,12 @@ h2{font-weight:600;font-size:clamp(22px,2.9vw,29px);line-height:1.18;max-width:3
 .tile .thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .tile .cap{display:block;margin-top:11px;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--graphite)}
 .note{margin-top:16px;font-size:12.5px;color:var(--graphite)}
+.logos{padding:52px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--paper-2)}
+.logohead{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--graphite);text-align:center}
+.logorow{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:26px 44px}
+.logorow img{height:44px;width:auto;opacity:.62;filter:grayscale(1)}
+@media(max-width:640px){.logorow{gap:20px 28px}.logorow img{height:36px}}
+
 .carsub{margin-top:14px;font-size:15px;color:var(--graphite);max-width:62ch;text-wrap:pretty}
 .car{margin-top:28px;display:flex;align-items:center;gap:16px;justify-content:center}
 .car .stage{flex:0 1 560px;border:1px solid var(--rule);background:var(--paper-2)}
@@ -113,6 +119,8 @@ h2{font-weight:600;font-size:clamp(22px,2.9vw,29px);line-height:1.18;max-width:3
 .who p{color:#2C3231;font-size:15.6px;text-wrap:pretty}
 .who p+p{margin-top:14px}
 .who ul{list-style:none}
+.credline{font-size:16.5px;color:#2C3231;text-wrap:pretty;border-left:2px solid var(--signal);padding-left:18px}
+.lin{display:inline-block;margin-top:18px;font-size:14px;color:var(--ink);border-bottom:1px solid var(--signal);text-decoration:none}
 .who li{padding:11px 0;border-bottom:1px solid var(--rule);font-size:14.6px;display:flex;gap:13px}
 .who li:first-child{border-top:1px solid var(--rule)}
 .who li b{font-weight:500}
@@ -160,6 +168,19 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--signal);outline-offse
     </div>
   </div>
 </div></header>
+
+
+<section class="logos"><div class="wrap">
+  <div class="logohead mono">Spoken and advised at</div>
+  <div class="logorow">
+    <img src="logos/house-of-lords.png" alt="House of Lords">
+    <img src="logos/singapore-tech-week.png" alt="Singapore Tech Week">
+    <img src="logos/dbt.png" alt="UK Department for Business and Trade">
+    <img src="logos/ncac.png" alt="National Council for Arts and Culture, Nigeria">
+    <img src="logos/iep.png" alt="Institute of Employability Professionals">
+    <img src="logos/omniverse.png" alt="Omniverse, Lagos">
+  </div>
+</div></section>
 
 <section><div class="wrap">
   <div class="marker">
@@ -275,14 +296,11 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--signal);outline-offse
       </p>
     </div>
     <div>
-      <ul>
-        <li><span class="tick mono">·</span><span><b>Global Head of AI Solutions</b>, enterprise AI firm</span></li>
-        <li><span class="tick mono">·</span><span>AI delivered into <b>private equity, life sciences and international law</b></span></li>
-        <li><span class="tick mono">·</span><span><b>Vice President</b>, JP Morgan. Barclays, BNP Paribas, BlackRock, Merrill Lynch</span></li>
-        <li><span class="tick mono">·</span><span>AI adoption program delivered to <b>100+ businesses</b></span></li>
-        <li><span class="tick mono">·</span><span>UK government advisory, <b>Department for Business and Trade</b></span></li>
-        <li><span class="tick mono">·</span><span>Keynote: <b>House of Lords</b>, Singapore Tech Week</span></li>
-      </ul>
+      <p class="credline">Twenty years explaining technology to people who do not build it. Keynotes at
+      Singapore Tech Week and the House of Lords, advisory work with the UK Department for Business and
+      Trade, and twenty years inside JP Morgan and BlackRock. Ìtumọ̀ is that job, turned into things you
+      can send.</p>
+      <a class="lin" href="https://www.linkedin.com/in/bolajiolatoye/">Bolaji on LinkedIn &rarr;</a>
     </div>
   </div>
 </div></section>
