@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ìtumọ̀, technical explainers for AI infrastructure</title>
+<title>Ìtumọ̀, content for tech companies</title>
 <meta name="robots" content="noindex, nofollow, noarchive">
-<meta name="description" content="Technical explainer video, launch content and executive briefings for AI infrastructure companies.">
+<meta name="description" content="Videos, presentations, infographics and guides for tech companies.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ìtumọ̀">
 <meta property="og:title" content="Ìtumọ̀, technical explainers for AI infrastructure">
@@ -49,8 +49,7 @@ h1{font-weight:600;font-size:clamp(29px,4.4vw,47px);line-height:1.1;max-width:21
 
 /* showreel */
 .reel{margin-top:44px;border:1px solid var(--rule);background:var(--paper-2)}
-.reel .frame{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;border-bottom:1px solid var(--rule);background:
-  repeating-linear-gradient(45deg,rgba(15,58,56,.035) 0 12px,transparent 12px 24px)}
+.reel video{width:100%;display:block;border-bottom:1px solid var(--rule);background:var(--paper)}
 .play{width:64px;height:64px;border:1.5px solid var(--signal);border-radius:50%;display:flex;align-items:center;justify-content:center}
 .play:after{content:"";border-left:15px solid var(--signal);border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
 .reel .cap{padding:14px 20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--graphite)}
@@ -73,9 +72,12 @@ h2{font-weight:600;font-size:clamp(22px,2.9vw,29px);line-height:1.18;max-width:2
 
 /* work */
 .work{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:34px}
-@media(min-width:760px){.work{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:760px){.work{grid-template-columns:repeat(2,1fr)}}
+.tile .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.tile .cap{display:block;margin-top:11px;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--graphite)}
+.note{margin-top:16px;font-size:12.5px;color:var(--graphite)}
 .tile{background:var(--paper-2);padding:0}
-.tile .thumb{aspect-ratio:16/10;border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(45deg,rgba(15,58,56,.035) 0 10px,transparent 10px 20px)}
+.tile .thumb{aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(45deg,rgba(15,58,56,.035) 0 10px,transparent 10px 20px)}
 .tile .thumb span{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--graphite)}
 .tile .t{padding:16px 18px 20px}
 .tile h3{font-size:15.5px;font-weight:600;line-height:1.25}
@@ -120,28 +122,27 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--signal);outline-offse
 <div id="top"></div>
 
 <header class="hero"><div class="wrap">
-  <div class="eyebrow">For AI infrastructure and deep technology</div>
-  <h1>We explain hard technology to the people deciding.</h1>
+  <div class="eyebrow">Videos, presentations, infographics and guides</div>
+  <h1>We design content for tech companies.</h1>
   <ul class="offer">
-    <li>Technical explainer video</li>
-    <li>Launch content packs</li>
-    <li>Keynote and executive presentations</li>
-    <li>Analyst and executive briefings</li>
+    <li>Videos</li>
+    <li>Presentations</li>
+    <li>Infographics</li>
+    <li>Guides</li>
   </ul>
   <p class="lede">
-    For companies whose product is genuinely technical. Made by people who understand the system,
-    so your engineers are not rewriting the third draft.
+    Made by people who understand the technology, so your engineers are not rewriting the third
+    draft.
   </p>
   <p class="gloss mono">Ìtumọ̀ &nbsp;/&nbsp; ee-TOO-maw &nbsp;/&nbsp; Yoruba: meaning, interpretation</p>
 
   <div class="reel">
-    <div class="frame">
-      <div class="play" aria-hidden="true"></div>
-      <div class="cap" style="border:0;padding:0"><span class="mono">Selected work 2026</span></div>
-    </div>
+    <video controls preload="metadata" poster="poster.png" playsinline>
+      <source src="itumo-explainer.mp4" type="video/mp4">
+    </video>
     <div class="cap">
-      <span class="mono">Showreel</span>
-      <span class="slotnote">[ SLOT: embed showreel here once the first three explainers are cut ]</span>
+      <span class="mono">Explainer &nbsp;·&nbsp; 0:42</span>
+      <span class="slotnote">Sample, built on publicly available material</span>
     </div>
   </div>
 </div></header>
@@ -151,34 +152,30 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--signal);outline-offse
     <svg width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><path d="M8 0 L15 11 H1 Z" fill="none" stroke="#E24E1B" stroke-width="1.3"/><line x1="0" y1="13.3" x2="16" y2="13.3" stroke="#E24E1B" stroke-width="1.3"/></svg>
     <span>What we make</span>
   </div>
-  <h2>Four things. Fixed scope, fixed date.</h2>
+  <h2>Four things we make</h2>
 
   <div class="svcs">
     <article class="svc">
-      <h3>Technical explainer video</h3>
-      <p>Animated architecture and product explainers, 60 to 90 seconds. Motion graphics and system
-      diagrams, not stock footage. For launches, sales, events and the website.</p>
+      <h3>Videos</h3>
+      <p>Explainer and launch videos, 60 to 90 seconds. Animated system diagrams and motion graphics, not stock footage.</p>
       <div class="meta"><span>10 working days</span></div>
     </article>
 
     <article class="svc">
-      <h3>Launch content packs</h3>
-      <p>Everything a launch needs between the press release and the docs. Architecture explainer,
-      solution brief for the technical buyer, evaluation guide and technical FAQ.</p>
+      <h3>Guides</h3>
+      <p>Solution briefs, evaluation guides, technical FAQs and launch packs. Written to be used, not filed.</p>
       <div class="meta"><span>3 weeks</span></div>
     </article>
 
     <article class="svc">
-      <h3>Keynote and executive presentations</h3>
-      <p>You own the argument, we own the finish. Technically accurate at the level a CTO or an AI
-      lab will actually read it, and built to your brand system.</p>
+      <h3>Presentations</h3>
+      <p>Keynote, board and analyst decks. You own the argument, we own the finish, built to your brand template.</p>
       <div class="meta"><span>10 working days</span></div>
     </article>
 
     <article class="svc">
-      <h3>Analyst and executive briefings</h3>
-      <p>Benchmark results, reference architectures and competitive proof turned into material a
-      buyer can act on and defend internally.</p>
+      <h3>Infographics</h3>
+      <p>Architecture diagrams, benchmark visuals and system explainers that hold up to a technical audience.</p>
       <div class="meta"><span>2 to 3 weeks</span></div>
     </article>
   </div>
@@ -191,21 +188,26 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--signal);outline-offse
     <svg width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><path d="M8 0 L15 11 H1 Z" fill="none" stroke="#E24E1B" stroke-width="1.3"/><line x1="0" y1="13.3" x2="16" y2="13.3" stroke="#E24E1B" stroke-width="1.3"/></svg>
     <span>Selected work</span>
   </div>
-  <h2>Recent explainers</h2>
+  <h2>What you get</h2>
   <div class="work">
     <article class="tile">
-      <div class="thumb"><span class="mono">Slot 01</span></div>
-      <div class="t"><h3>What goodput actually measures</h3><p>Why utilization numbers mislead, and what an hour of lost training time costs.</p></div>
+      <div class="thumb"><img src="poster.png" alt="Explainer frame showing 1,024 nodes with one failed"></div>
+      <div class="t"><h3>Videos</h3><p>60 to 90 seconds. Animated system diagrams and motion graphics.</p><span class="cap mono">Sample &nbsp;·&nbsp; synchronous training</span></div>
     </article>
     <article class="tile">
-      <div class="thumb"><span class="mono">Slot 02</span></div>
-      <div class="t"><h3>Recovering a 1,024 GPU run</h3><p>What happens when a node fails four days into training, explained end to end.</p></div>
+      <div class="thumb"><img src="thumb-pack.png" alt="Three documents from a launch content pack"></div>
+      <div class="t"><h3>Guides</h3><p>Solution briefs, evaluation guides and technical FAQs.</p><span class="cap mono">Sample &nbsp;·&nbsp; AI cloud launch</span></div>
     </article>
     <article class="tile">
-      <div class="thumb"><span class="mono">Slot 03</span></div>
-      <div class="t"><h3>Sandboxed execution for agents</h3><p>Where isolated execution sits in a reinforcement learning stack.</p></div>
+      <div class="thumb"><img src="thumb-deck.png" alt="Three slides from an executive presentation"></div>
+      <div class="t"><h3>Presentations</h3><p>Built to your brand template, accurate at board level.</p><span class="cap mono">Sample &nbsp;·&nbsp; infrastructure decision</span></div>
+    </article>
+    <article class="tile">
+      <div class="thumb"><img src="frame-3.png" alt="Timeline diagram of a training run failure and rollback"></div>
+      <div class="t"><h3>Infographics</h3><p>Architecture and benchmark visuals for a technical audience.</p><span class="cap mono">Sample &nbsp;·&nbsp; recovery economics</span></div>
     </article>
   </div>
+  <p class="note">All work shown is sample work, built on publicly available material.</p>
 </div></section>
 
 <section class="why"><div class="wrap">
@@ -213,9 +215,9 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--signal);outline-offse
     <svg width="16" height="14" viewBox="0 0 16 14" aria-hidden="true"><path d="M8 0 L15 11 H1 Z" fill="none" stroke="#E24E1B" stroke-width="1.3"/><line x1="0" y1="13.3" x2="16" y2="13.3" stroke="#E24E1B" stroke-width="1.3"/></svg>
     <span>Why us</span>
   </div>
-  <h2>Your docs serve customers. Your brand serves strangers. We make the bit in between.</h2>
+  <h2>Why us and not a creative agency</h2>
   <div class="whygrid">
-    <div><b>No translation tax</b><span>We arrive understanding inference, training economics and what breaks at scale. The brief does not start with a tutorial.</span></div>
+    <div><b>No translation tax</b><span>We arrive understanding the technology. The brief does not start with a tutorial.</span></div>
     <div><b>No account layer</b><span>You work directly with the person making the thing. Nobody is relaying your feedback to someone else.</span></div>
     <div><b>Built for launch dates</b><span>First cut inside ten working days. Revisions in hours, not weeks.</span></div>
     <div><b>Inside your brand</b><span>We work to your existing system. We do not compete with your brand partner and we do not redesign anything.</span></div>
