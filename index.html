@@ -67,7 +67,8 @@ h2{font-weight:600;font-size:clamp(22px,2.9vw,29px);line-height:1.18;max-width:3
 /* services */
 .svcs{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:34px}
 @media(min-width:820px){.svcs{grid-template-columns:1fr 1fr}}
-.svc{background:var(--paper-2);padding:26px 24px 28px}
+.svc{background:var(--paper-2);padding:0;overflow:hidden}
+.svc img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover}
 .svc h3{font-size:19px;font-weight:600;line-height:1.2;text-wrap:balance}
 .svc p{margin-top:11px;font-size:14.6px;color:#3A413F;text-wrap:pretty}
 .svc .meta{margin-top:16px;padding-top:12px;border-top:1px solid var(--rule);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--graphite);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
@@ -178,22 +179,10 @@ a:focus-visible,.cta:focus-visible{outline:2px solid var(--signal);outline-offse
   </div>
   <h2>What we make</h2>
   <div class="svcs">
-    <article class="svc">
-      <h3>Videos</h3>
-      <p>Explainer and launch films, 60 to 90 seconds. Animated system diagrams and motion graphics, not stock footage.</p>
-    </article>
-    <article class="svc">
-      <h3>Guides</h3>
-      <p>Solution briefs, evaluation guides, technical FAQs and launch packs. Written to be used, not filed.</p>
-    </article>
-    <article class="svc">
-      <h3>Presentations</h3>
-      <p>Keynote, board and analyst decks. You own the argument, we own the finish, built to your brand template.</p>
-    </article>
-    <article class="svc">
-      <h3>Infographics</h3>
-      <p>Carousels, architecture posters and system diagrams that hold up to a technical audience.</p>
-    </article>
+    <article class="svc"><img src="tiles/videos.jpg" alt="A monitor in a studio showing an edit of an explainer film"></article>
+    <article class="svc"><img src="tiles/guides.jpg" alt="Printed guides laid out on an oak table"></article>
+    <article class="svc"><img src="tiles/presentations.jpg" alt="A meeting room display showing a board deck slide"></article>
+    <article class="svc"><img src="tiles/infographics.jpg" alt="A large printed poster leaning against a studio wall"></article>
   </div>
 </div></section>
 
